@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,157 +6,202 @@
   <title>Sehchri Creations – Handmade Radha Krishna Poshak</title>
   <meta name="description" content="Sehchri Creations offers handmade Radha-Krishna poshaks inspired by Vrindavan. All sizes available. Order now via WhatsApp – Fast shipping across India.">
   <meta name="keywords" content="Radha Krishna poshak, handmade poshak, Janmashtami dress, deity dress, vrindavan poshak">
- <style>
-body {
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background: url('images/krishna.jpg') no-repeat center center fixed;
-  background-size: cover;  
-  background-attachment: fixed; 
-}
 
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.7);
-  z-index: -1;
-}
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  header {
-    text-align: center;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.85);
-    border-bottom: 2px solid #e0c3fc;
-  }
+  <style>
+    /* Body */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('images/krishna.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
 
-  header img {
-    max-width: 150px;
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
+    /* Overlay for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.75);
+      z-index: -1;
+    }
 
-  nav {
-    margin-top: 10px;
-  }
+    /* Header */
+    header {
+      text-align: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      border-bottom: 2px solid #e0c3fc;
+    }
 
-  nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-    color: #5c2d91;
-    transition: color 0.3s;
-  }
+    header img {
+      max-width: 150px;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-  nav a:hover {
-    color: #ff4081;
-  }
+    nav {
+      margin-top: 10px;
+    }
 
-  .hero {
-    text-align: center;
-    padding: 60px 20px;
-    background: rgba(255,255,255,0.7);
-    border-bottom: 2px dashed #e0c3fc;
-  }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      color: #5c2d91;
+      transition: color 0.3s;
+    }
 
-  .hero h1 {
-    font-size: 2.2rem;
-    color: #5c2d91;
-  }
+    nav a:hover {
+      color: #ff4081;
+    }
 
-  .hero p {
-    font-size: 1.1rem;
-    color: #333;
-  }
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: rgba(255,255,255,0.8);
+      border-bottom: 2px dashed #e0c3fc;
+      position: relative;
+    }
 
-  .cta-btn {
-    display: inline-block;
-    margin-top: 20px;
-    background: #25D366;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    transition: background 0.3s;
-  }
+    .hero h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      font-weight: bold;
+      color: #4B0082;
+      margin-bottom: 10px;
+    }
 
-  .cta-btn:hover {
-    background: #1ebe5c;
-  }
+    .hero p {
+      font-family: 'Merriweather', serif;
+      font-size: 1.2rem;
+      color: #333;
+    }
 
-  h2 {
-    text-align: center;
-    margin: 30px 0;
-    color: #5c2d91;
-  }
+    .cta-btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #25D366;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: background 0.3s;
+    }
 
-  .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
+    .cta-btn:hover {
+      background: #128C7E;
+    }
 
-  .product {
-    background: rgba(255,255,255,0.9);
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    text-align: center;
-    padding: 10px;
-  }
+    /* Flute PNG */
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      right: 30px;
+      width: 120px;
+      height: 40px;
+      background: url('images/flute.png') no-repeat center;
+      background-size: contain;
+      transform: rotate(-15deg);
+    }
 
-  .product img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
+    /* Section Titles */
+    h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      color: #4B0082;
+    }
 
-  footer {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 20px;
-    font-size: 0.95rem;
-    margin-top: 20px;
-    border-top: 2px solid #e0c3fc;
-    color: #5c2d91;
-  }
+    /* Products */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
 
-  footer p:first-child {
-    font-style: italic;
-    font-weight: bold;
-  }
-</style>
+    .product {
+      background: rgba(255,255,255,0.9);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 10px;
+    }
+
+    .product img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      margin: 10px 0;
+      color: #5c2d91;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      font-size: 1rem;
+      margin-top: 20px;
+      border-top: 2px solid #e0c3fc;
+      color: #5c2d91;
+    }
+
+    footer p:first-child {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.5rem;
+      color: #6a0dad;
+      margin-bottom: 5px;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-  <nav class="navbar">
     <div class="logo">
       <img src="images/logo.png" alt="Sehchri Creations Logo">
     </div>
-    <div class="nav-links">
+    <nav class="nav-links">
       <a href="#home">Home</a>
       <a href="#about">About Us</a>
       <a href="#products">Products</a>
       <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
-    </div>
-  </nav>
-</header>
+    </nav>
+  </header>
 
+  <!-- Hero -->
   <section class="hero" id="home">
     <h1>Handmade Radha-Krishna Poshak – Vrindavan Inspired</h1>
     <p>Beautiful, handmade dresses for your Deities. All sizes available. Perfect for Janmashtami, Radha Ashtami & daily worship.</p>
     <a href="https://wa.me/919058690076?text=Hi%20Sehchri%20Creation!%20I%20want%20to%20order%20a%20poshak" class="cta-btn">Order on WhatsApp</a>
   </section>
 
+  <!-- Products -->
   <section id="products">
-    <h2 style="text-align:center; color:#2a4d8f;">Our Products</h2>
+    <h2>Our Products</h2>
     <div class="products">
       <div class="product">
         <img src="https://images.unsplash.com/photo-1620841743451-0e7a79f68de2?auto=format&fit=crop&w=600&q=80" alt="Krishna Poshak 1">
@@ -168,24 +213,27 @@ body::before {
         <h3>Krishna Poshak – Pink Blossom</h3>
         <a class="cta-btn" href="https://wa.me/919058690076?text=I%20want%20Krishna%20Poshak%20Pink%20Blossom">Order Now</a>
       </div>
-      <!-- Add 8 more product divs here -->
+      <!-- More products add kar sakte ho -->
     </div>
   </section>
 
+  <!-- About -->
   <section id="about" style="padding:40px; background:#fff7f8;">
-    <h2 style="text-align:center; color:#2a4d8f;">Our Story</h2>
-    <p style="max-width:700px; margin:auto; text-align:center;">
+    <h2>Our Story</h2>
+    <p style="max-width:700px; margin:auto; text-align:center; font-family:'Merriweather', serif;">
       Sehchri Creation was born out of devotion and love for Shri Radha-Krishna. Each dress is designed keeping Vrindavan’s traditional charm alive, while using high-quality fabric, pearls, stones & embroidery. Our goal is to deliver beautiful, affordable, handmade poshaks that enhance your deity’s beauty and bring divinity to your home temple.
     </p>
   </section>
 
+  <!-- Gallery -->
   <section id="gallery" style="padding:40px;">
-    <h2 style="text-align:center; color:#2a4d8f;">Gallery</h2>
+    <h2>Gallery</h2>
     <p style="text-align:center;">(Add process / behind-the-scenes images here later)</p>
   </section>
 
+  <!-- Contact -->
   <section id="contact" style="padding:40px; background:#fff7f8;">
-    <h2 style="text-align:center; color:#2a4d8f;">Contact Us</h2>
+    <h2>Contact Us</h2>
     <p style="text-align:center;">📞 Phone: 9058690076</p>
     <p style="text-align:center;">📧 Email: sehchricreation@gmail.com</p>
     <div style="text-align:center;">
@@ -193,8 +241,12 @@ body::before {
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    © 2025 Sehchri Creations. All rights reserved.
+    <p>With Love from Vrindavan 🌸✨</p>
+    <p>© 2025 Sehchri Creations. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
+
