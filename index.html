@@ -166,6 +166,72 @@
     .product:hover img{ transform: scale(1.05); }
     .product h3{ color: #5c2d91; font-size:1.05rem; margin:0; }
 
+    /* ---------- About ---------- */
+    .about-text{
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      font-family: 'Merriweather', serif;
+      line-height: 1.6;
+      color: #333;
+      font-size: 1.05rem;
+      padding: 0 18px;
+    }
+
+    /* ---------- Gallery ---------- */
+    .gallery-text {
+      text-align: center;
+      font-family: 'Merriweather', serif;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #444;
+      font-style: italic;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+    }
+
+    /* ---------- Contact ---------- */
+    .contact-box {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      background: rgba(255,255,255,0.75);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    .contact-box p {
+      font-family: 'Merriweather', serif;
+      font-size: 1rem;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .contact-box .icon {
+      font-size: 1.2rem;
+      margin-right: 6px;
+    }
+
     /* ---------- Footer ---------- */
     footer{
       text-align:center;
@@ -234,18 +300,34 @@
     <!-- ABOUT -->
     <section id="about" class="section-block bg-soft">
       <h2>Our Story</h2>
-      <p>
-        Sehchri Creation was born out of devotion and love for Shri Radha-Krishna. Each dress is designed keeping Vrindavan’s traditional charm alive, while using high-quality fabric, pearls, stones & embroidery.
+      <p class="about-text">
+        Sehchri Creation was born out of devotion and love for Shri Radha-Krishna.  
+        Each dress is designed keeping Vrindavan’s traditional charm alive, while using  
+        high-quality fabric, pearls, stones & embroidery.  
+        <br><br>
+        Our goal is to deliver beautiful, affordable, handmade poshaks that enhance your  
+        deity’s beauty and bring divinity to your home temple. ✨
       </p>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section-block">
+      <h2>Gallery</h2>
+      <p class="gallery-text">✨ A glimpse of our handmade Radha-Krishna poshaks ✨</p>
+      <div class="gallery-grid">
+        <img src="images/gallery1.jpg" alt="Radha Krishna Poshak 1">
+        <img src="images/gallery2.jpg" alt="Radha Krishna Poshak 2">
+        <img src="images/gallery3.jpg" alt="Radha Krishna Poshak 3">
+      </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="section-block bg-soft">
       <h2>Contact Us</h2>
-      <p style="text-align:center;">📞 Phone: 9259005699</p>
-      <p style="text-align:center;">📧 Email: sehchricreation@gmail.com</p>
-      <div style="text-align:center; margin-top:8px;">
-        <a class="cta-btn" href="https://wa.me/919259005699">Chat on WhatsApp</a>
+      <div class="contact-box">
+        <p><span class="icon">📞</span> <strong>Phone:</strong> 9259005699</p>
+        <p><span class="icon">📧</span> <strong>Email:</strong> sehchricreation@gmail.com</p>
+        <a class="cta-btn" href="https://wa.me/919259005699?text=Hi%20Sehchri%20Creation!%20I%20want%20to%20order%20a%20poshak" aria-label="Chat on WhatsApp">Chat on WhatsApp</a>
       </div>
     </section>
   </main>
