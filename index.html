@@ -27,11 +27,12 @@
       color: #222;
     }
 
+    /* subtle overlay so background shows but text readable - adjust alpha to make bg more visible */
     body::before{
       content:"";
       position: fixed;
       top:0; left:0; right:0; bottom:0;
-      background: rgba(255,255,255,0.60);
+      background: rgba(255,255,255,0.60); /* reduce to 0.55 or 0.50 if you want more background visibility */
       z-index: -2;
     }
 
@@ -46,6 +47,8 @@
       backdrop-filter: blur(6px);
       border-bottom: 1px solid rgba(160,120,220,0.25);
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 2;
     }
 
     .logo img{
@@ -53,7 +56,7 @@
       border-radius:50%;
       box-shadow: 0 6px 18px rgba(0,0,0,0.12);
       border: 3px solid rgba(215,185,255,0.7);
-      background: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.5); /* keeps logo visible on any bg */
       padding:6px;
     }
 
@@ -81,6 +84,7 @@
       padding:72px 20px;
       background: linear-gradient(rgba(255,255,255,0.86), rgba(255,255,255,0.86));
       border-bottom: 2px dashed rgba(224,195,252,0.8);
+      z-index: 1;
     }
     .hero h1{
       margin:0 0 12px 0;
@@ -109,11 +113,11 @@
       transition: all .25s ease;
     }
     .cta-btn:hover{
-      transform: translateY(-3px) scale(1.05);
+      transform: translateY(-3px) scale(1.03);
       box-shadow: 0 12px 24px rgba(0,0,0,0.18);
     }
 
-    /* Decorative flute PNG fixed */
+    /* Decorative flute PNG fixed (will show only if images/flute.png exists) */
     .hero::after{
       content:"";
       position:absolute;
@@ -151,6 +155,10 @@
       text-align:center;
       border:1px solid rgba(220,200,255,0.5);
       transition: transform .25s ease, box-shadow .25s ease;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      justify-content:space-between;
     }
     .product:hover{
       transform: translateY(-6px);
@@ -263,7 +271,7 @@
   <!-- HEADER -->
   <header>
     <div class="logo"><img src="images/logo.png" alt="Sehchri Creations Logo"></div>
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Main navigation">
       <a href="#home">Home</a>
       <a href="#about">About Us</a>
       <a href="#products">Products</a>
@@ -274,23 +282,24 @@
 
   <!-- HERO -->
   <main>
-    <section class="hero" id="home">
-      <h1>Handmade Radha-Krishna Poshak – Vrindavan Inspired</h1>
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">Handmade Radha-Krishna Poshak – Vrindavan Inspired</h1>
       <p>Beautiful, handmade dresses for your Deities. All sizes available. Perfect for Janmashtami, Radha Ashtami & daily worship.</p>
-      <a class="cta-btn" href="https://wa.me/919259005699?text=Hi%20Sehchri%20Creation!%20I%20want%20to%20order%20a%20poshak">Order on WhatsApp</a>
+      <a class="cta-btn" href="https://wa.me/919259005699?text=Hi%20Sehchri%20Creation!%20I%20want%20to%20order%20a%20poshak" aria-label="Order on WhatsApp">Order on WhatsApp</a>
     </section>
 
     <!-- PRODUCTS -->
     <section id="products">
       <h2>Our Products</h2>
-      <div class="products">
-        <div class="product">
-          <img src="iamges/blueroyal.jpg alt="Krishna Poshak Blue Royal">
+      <div class="products" role="list">
+        <div class="product" role="listitem">
+          <img src="images/blueroyal.jpg" alt="Krishna Poshak Blue Royal">
           <h3>Krishna Poshak – Blue Royal</h3>
           <a class="cta-btn" href="https://wa.me/919259005699?text=I%20want%20Krishna%20Poshak%20Blue%20Royal">Order Now</a>
         </div>
-        <div class="product">
-          <img src="pink.webp alt="Krishna Poshak Pink Blossom">
+
+        <div class="product" role="listitem">
+          <img src="images/pink.webp" alt="Krishna Poshak Pink Blossom">
           <h3>Krishna Poshak – Pink Blossom</h3>
           <a class="cta-btn" href="https://wa.me/919259005699?text=I%20want%20Krishna%20Poshak%20Pink%20Blossom">Order Now</a>
         </div>
@@ -314,10 +323,10 @@
     <section id="gallery" class="section-block">
       <h2>Gallery</h2>
       <p class="gallery-text">✨ A glimpse of our handmade Radha-Krishna poshaks ✨</p>
-      <div class="gallery-grid">
-        <img src="images/gallery1.jpg" alt="Radha Krishna Poshak 1">
-        <img src="images/gallery2.jpg" alt="Radha Krishna Poshak 2">
-        <img src="images/gallery3.jpg" alt="Radha Krishna Poshak 3">
+      <div class="gallery-grid" role="list">
+        <img src="images/phand.jpg" alt="Radha Krishna Poshak – Pink Handwork">
+        <img src="images/purple.webp" alt="Radha Krishna Poshak – Purple Design">
+        <img src="images/shopping.webp" alt="Radha Krishna Poshak – Shopping Special">
       </div>
     </section>
 
