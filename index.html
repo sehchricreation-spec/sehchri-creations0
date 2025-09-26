@@ -10,66 +10,81 @@
   body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
-    background: #fff7f8 url('https://images.unsplash.com/photo-1617957745224-19a68e5b3d3c?auto=format&fit=crop&w=1920&q=80') no-repeat center top;
+    background: #fffafc url('https://www.transparenttextures.com/patterns/paper-fibers.png');
     background-size: cover;
   }
 
-  /* ===== Navbar + Header updated ===== */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 12px 30px;
-    box-shadow: 0px 3px 8px rgba(0,0,0,0.15);
-    border-bottom: 2px solid #e6d5f5; /* soft spiritual border */
+  header {
+    text-align: center;
+    padding: 15px;
   }
-
-  .logo img {
-    height: 65px;
-    width: auto;
+  header img {
+    max-width: 160px;
     border-radius: 50%;
-    border: 2px solid #d1b3ff; /* soft purple border for Vrindavan feel */
+    border: 3px solid #e6d6f7;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
-  .nav-links a {
-    margin: 0 18px;
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px;
+    font-weight: bold;
+    border-top: 2px solid #d9c2f0;
+    border-bottom: 2px solid #d9c2f0;
+  }
+  nav a {
     text-decoration: none;
-    font-weight: 600;
-    color: #4b2c7a; /* Krishna blue-purple */
-    transition: all 0.3s ease;
-    font-size: 1rem;
+    color: #4a148c;
+    position: relative;
+  }
+  nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -4px;
+    background: goldenrod;
+    transition: 0.3s;
+  }
+  nav a:hover::after {
+    width: 100%;
   }
 
-  .nav-links a:hover {
-    color: #e67e22; /* saffron hover (temple vibe) */
-    text-shadow: 0px 0px 6px rgba(230,126,34,0.5);
-  }
-
-  /* ===== Hero section ===== */
   .hero {
     text-align: center;
-    padding: 70px 20px;
-    background: rgba(255,255,255,0.7);
-    border-bottom: 2px dashed #d1b3ff;
+    padding: 60px 20px;
+    background: rgba(255,255,255,0.8) url('https://cdn-icons-png.flaticon.com/512/616/616490.png') no-repeat right 20px bottom 20px;
+    background-size: 80px;
+    border-bottom: 3px dashed #d9c2f0;
   }
   .hero h1 {
     font-size: 2.2rem;
-    color: #4b2c7a;
-    font-family: 'Georgia', serif;
+    color: #4a148c;
+    font-weight: bold;
   }
-
+  .hero p {
+    font-size: 1rem;
+    color: #333;
+  }
   .cta-btn {
     display: inline-block;
-    margin-top: 25px;
+    margin-top: 20px;
     background: #25D366;
     color: white;
-    padding: 14px 28px;
-    border-radius: 30px;
+    padding: 12px 28px;
+    border-radius: 25px;
     text-decoration: none;
     font-size: 1.1rem;
-    font-weight: bold;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+  .cta-btn:hover {
+    background: #1ebe5d;
+    transform: scale(1.05);
   }
 
   .products {
@@ -77,31 +92,37 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
-    background: #fff;
+    background: #fffdfd;
   }
   .product {
-    background: #fff9f5;
-    border-radius: 15px;
+    background: #fffafc;
+    border-radius: 12px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     overflow: hidden;
     text-align: center;
-    padding: 12px;
-    border: 1px solid #f3d9fa; /* pastel border */
+    padding: 10px;
+    border: 2px solid #f1e3ff;
   }
   .product img {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: 12px;
   }
 
   footer {
     text-align: center;
-    background: #fdf2ff;
+    background: #f6edff;
     padding: 20px;
-    font-size: 0.9rem;
-    border-top: 2px solid #e6d5f5;
-    color: #4b2c7a;
+    font-size: 0.95rem;
+    color: #4a148c;
+    border-top: 2px solid #e2d0ff;
+  }
+  footer::after {
+    content: "✨ With Love from Vrindavan 🌸";
+    display: block;
+    margin-top: 8px;
+    font-style: italic;
+    color: #7b1fa2;
   }
 </style>
 </head>
