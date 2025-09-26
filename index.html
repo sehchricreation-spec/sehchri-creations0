@@ -11,18 +11,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Merriweather:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* ---------- Base / Background ---------- */
     :root{
       --primary-purple: #4B0082;
       --accent: #25D366;
+      --gradient-btn: linear-gradient(135deg, #25D366, #128C7E);
       --card-bg: rgba(255,255,255,0.92);
     }
 
-    html,body{
-      height:100%;
-      margin:0;
-    }
-
+    html,body{height:100%;margin:0;}
     body{
       font-family: 'Poppins', sans-serif;
       background: url('images/krishna.jpg') no-repeat center center fixed;
@@ -31,34 +27,29 @@
       color: #222;
     }
 
-    /* overlay layer to keep text readable but allow background to show */
     body::before{
       content:"";
       position: fixed;
       top:0; left:0; right:0; bottom:0;
-      background: rgba(255,255,255,0.65); /* overlay opacity — tweak if needed */
-      z-index: -2; /* behind content */
+      background: rgba(255,255,255,0.60);
+      z-index: -2;
     }
 
-    /* ---------- Header (transparent + blur) ---------- */
+    /* ---------- Header ---------- */
     header{
-      position: relative;
-      z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       gap: 8px;
       padding: 18px 16px;
-      background: rgba(255,255,255,0.6); /* transparent */
-      backdrop-filter: blur(6px); /* frosted glass effect */
-      -webkit-backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(6px);
       border-bottom: 1px solid rgba(160,120,220,0.25);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
     .logo img{
       width:120px;
-      height:auto;
       border-radius:50%;
       box-shadow: 0 6px 18px rgba(0,0,0,0.12);
       border: 3px solid rgba(215,185,255,0.7);
@@ -66,12 +57,9 @@
       padding:6px;
     }
 
-    /* nav */
     .nav-links{
       display:flex;
       gap:22px;
-      align-items:center;
-      justify-content:center;
       flex-wrap:wrap;
       margin-top:6px;
     }
@@ -79,9 +67,7 @@
       text-decoration:none;
       color:var(--primary-purple);
       font-weight:600;
-      font-family:'Poppins',sans-serif;
       transition: color .25s ease, transform .15s ease;
-      letter-spacing: .2px;
     }
     .nav-links a:hover{
       color:#d63384;
@@ -91,21 +77,17 @@
     /* ---------- Hero ---------- */
     .hero{
       position: relative;
-      z-index: 1;
       text-align:center;
       padding:72px 20px;
       background: linear-gradient(rgba(255,255,255,0.86), rgba(255,255,255,0.86));
       border-bottom: 2px dashed rgba(224,195,252,0.8);
     }
-
     .hero h1{
       margin:0 0 12px 0;
       font-family: 'Great Vibes', cursive;
       color: var(--primary-purple);
       font-size: 3.2rem;
-      line-height:1.05;
     }
-
     .hero p{
       margin:0 auto;
       max-width:960px;
@@ -117,42 +99,42 @@
     .cta-btn{
       display:inline-block;
       margin-top:22px;
-      background: var(--accent);
+      background: var(--gradient-btn);
       color:#fff;
       padding:12px 28px;
       border-radius:28px;
       text-decoration:none;
       font-weight:600;
       box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-      transition: transform .18s ease, box-shadow .18s ease;
-      font-family:'Poppins',sans-serif;
+      transition: all .25s ease;
     }
-    .cta-btn:hover{ transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.14); }
+    .cta-btn:hover{
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+    }
 
-    /* Decorative flute PNG placed inside hero (use images/flute.png) */
+    /* Decorative flute PNG fixed */
     .hero::after{
       content:"";
       position:absolute;
-      bottom:-30px;
-      right:28px;
-      width:120px;
-      height:40px;
-      background: url('images/flute.jpg') no-repeat center/contain;
-      transform: rotate(-15deg);
-      opacity:0.98;
+      bottom:-40px;
+      right:40px;
+      width:150px;
+      height:50px;
+      background: url('images/flute.png') no-repeat center/contain;
+      transform: rotate(-12deg);
+      opacity:0.95;
       pointer-events:none;
     }
 
-    /* ---------- Section Titles ---------- */
+    /* ---------- Products grid ---------- */
     h2{
       font-family: 'Merriweather', serif;
       font-size:2rem;
       color: var(--primary-purple);
       text-align:center;
-      margin:36px 0 6px 0;
+      margin:36px 0 12px 0;
     }
-
-    /* ---------- Products grid ---------- */
     .products{
       padding:20px;
       display:grid;
@@ -161,7 +143,6 @@
       max-width:1200px;
       margin: 0 auto 30px auto;
     }
-
     .product{
       background: var(--card-bg);
       border-radius:12px;
@@ -169,86 +150,54 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.06);
       text-align:center;
       border:1px solid rgba(220,200,255,0.5);
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      justify-content:space-between;
+      transition: transform .25s ease, box-shadow .25s ease;
     }
-
+    .product:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    }
     .product img{
       width:100%;
       height:230px;
       object-fit:cover;
       border-radius:8px;
+      transition: transform .3s ease;
     }
-    .product h3{
-      margin:0;
-      color: #5c2d91;
-      font-family:'Poppins',sans-serif;
-      font-size:1.05rem;
-    }
-
-    /* ---------- About / Contact / Gallery ---------- */
-    .section-block{
-      padding:40px 20px;
-      max-width:900px;
-      margin:0 auto;
-      background: none;
-    }
-
-    .section-block.bg-soft{
-      background: rgba(255,247,248,0.85);
-    }
-
-    .section-block p{
-      font-family: 'Merriweather', serif;
-      color:#222;
-      line-height:1.6;
-    }
+    .product:hover img{ transform: scale(1.05); }
+    .product h3{ color: #5c2d91; font-size:1.05rem; margin:0; }
 
     /* ---------- Footer ---------- */
     footer{
       text-align:center;
-      padding:22px 16px;
-      background: rgba(255,255,255,0.9);
+      padding:28px 16px;
+      background: rgba(255,255,255,0.95);
       border-top:1px solid rgba(224,195,252,0.6);
       color: #5c2d91;
     }
-
     footer .love{
       font-family: 'Great Vibes', cursive;
-      font-size:1.4rem;
-      color:#6a0dad;
-      margin:0 0 6px 0;
+      font-size:1.6rem;
+      margin:0 0 8px 0;
     }
-    footer small{
-      display:block;
-      color:#5c2d91;
-      margin-top:6px;
-      font-family:'Poppins',sans-serif;
-      font-size:.95rem;
-    }
+    footer small{ font-size:.9rem; }
 
-    /* ---------- Responsive tweaks ---------- */
     @media (max-width:900px){
       .hero h1{ font-size:2.4rem; }
-      .hero::after{ width:100px; height:34px; right:18px; bottom:-24px; }
-      .logo img{ width:110px; }
+      .hero::after{ width:120px; height:40px; right:20px; bottom:-30px; }
+      .logo img{ width:100px; }
     }
     @media (max-width:560px){
       .hero h1{ font-size:1.9rem; }
-      .nav-links{ gap:12px; font-size:.95rem; }
-      .products{ padding:12px; gap:12px; }
+      .products{ gap:14px; }
       .product img{ height:180px; }
     }
   </style>
 </head>
-
 <body>
   <!-- HEADER -->
   <header>
     <div class="logo"><img src="images/logo.png" alt="Sehchri Creations Logo"></div>
-    <nav class="nav-links" aria-label="Main navigation">
+    <nav class="nav-links">
       <a href="#home">Home</a>
       <a href="#about">About Us</a>
       <a href="#products">Products</a>
@@ -259,29 +208,26 @@
 
   <!-- HERO -->
   <main>
-    <section class="hero" id="home" aria-labelledby="hero-heading">
-      <h1 id="hero-heading">Handmade Radha-Krishna Poshak – Vrindavan Inspired</h1>
+    <section class="hero" id="home">
+      <h1>Handmade Radha-Krishna Poshak – Vrindavan Inspired</h1>
       <p>Beautiful, handmade dresses for your Deities. All sizes available. Perfect for Janmashtami, Radha Ashtami & daily worship.</p>
-      <a class="cta-btn" href="https://wa.me/919058690076?text=Hi%20Sehchri%20Creation!%20I%20want%20to%20order%20a%20poshak" aria-label="Order on WhatsApp">Order on WhatsApp</a>
+      <a class="cta-btn" href="https://wa.me/919259005699?text=Hi%20Sehchri%20Creation!%20I%20want%20to%20order%20a%20poshak">Order on WhatsApp</a>
     </section>
 
     <!-- PRODUCTS -->
     <section id="products">
       <h2>Our Products</h2>
-      <div class="products" role="list">
-        <div class="product" role="listitem">
+      <div class="products">
+        <div class="product">
           <img src="https://images.unsplash.com/photo-1620841743451-0e7a79f68de2?auto=format&fit=crop&w=600&q=80" alt="Krishna Poshak Blue Royal">
           <h3>Krishna Poshak – Blue Royal</h3>
-          <a class="cta-btn" href="https://wa.me/919058690076?text=I%20want%20Krishna%20Poshak%20Blue%20Royal">Order Now</a>
+          <a class="cta-btn" href="https://wa.me/919259005699?text=I%20want%20Krishna%20Poshak%20Blue%20Royal">Order Now</a>
         </div>
-
-        <div class="product" role="listitem">
+        <div class="product">
           <img src="https://images.unsplash.com/photo-1620841662961-42b21b5a2dd5?auto=format&fit=crop&w=600&q=80" alt="Krishna Poshak Pink Blossom">
           <h3>Krishna Poshak – Pink Blossom</h3>
-          <a class="cta-btn" href="https://wa.me/919058690076?text=I%20want%20Krishna%20Poshak%20Pink%20Blossom">Order Now</a>
+          <a class="cta-btn" href="https://wa.me/919259005699?text=I%20want%20Krishna%20Poshak%20Pink%20Blossom">Order Now</a>
         </div>
-
-        <!-- Add more product cards below (duplicate the .product blocks) -->
       </div>
     </section>
 
@@ -289,23 +235,17 @@
     <section id="about" class="section-block bg-soft">
       <h2>Our Story</h2>
       <p>
-        Sehchri Creation was born out of devotion and love for Shri Radha-Krishna. Each dress is designed keeping Vrindavan’s traditional charm alive, while using high-quality fabric, pearls, stones & embroidery. Our goal is to deliver beautiful, affordable, handmade poshaks that enhance your deity’s beauty and bring divinity to your home temple.
+        Sehchri Creation was born out of devotion and love for Shri Radha-Krishna. Each dress is designed keeping Vrindavan’s traditional charm alive, while using high-quality fabric, pearls, stones & embroidery.
       </p>
-    </section>
-
-    <!-- GALLERY -->
-    <section id="gallery" class="section-block">
-      <h2>Gallery</h2>
-      <p style="text-align:center;">(Add process / behind-the-scenes images here later)</p>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="section-block bg-soft">
       <h2>Contact Us</h2>
-      <p style="text-align:center;">📞 Phone: 9058690076</p>
+      <p style="text-align:center;">📞 Phone: 9259005699</p>
       <p style="text-align:center;">📧 Email: sehchricreation@gmail.com</p>
       <div style="text-align:center; margin-top:8px;">
-        <a class="cta-btn" href="https://wa.me/919058690076" aria-label="Chat on WhatsApp">Chat on WhatsApp</a>
+        <a class="cta-btn" href="https://wa.me/919259005699">Chat on WhatsApp</a>
       </div>
     </section>
   </main>
